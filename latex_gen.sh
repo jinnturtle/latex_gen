@@ -12,7 +12,7 @@
 
 version_maj=2
 version_min=1
-version_fix=2
+version_fix=3
 
 # TODO - add a flag for destination of output file
 
@@ -43,7 +43,7 @@ function rm_generated_files () {
     rm -fv "$filename_nosuf.log"
     rm -rvf "_minted-$filename_nosuf"
 
-    cd --
+    cd -
 }
 
 # cannot use --output-dir=<my_dir>, because some packages don't support this
@@ -64,7 +64,7 @@ function mv_generated_files () {
     mv -fv "_minted-$filename_nosuf" \
        "$aux_dirname/"
 
-    cd --
+    cd -
 }
 
 
@@ -146,7 +146,7 @@ while [ $runs_done -lt $runs_needed ]; do
     fi
     runs_done=$((++runs_done))
 
-    cd --
+    cd -
 done
 
 # decide what to do with auxilliary files if anything
@@ -164,7 +164,7 @@ if [ "$out_filepath_override" != "" ]; then
     default_outp=$(realpath "$filename_nosuf.pdf")
     mv -v $default_outp $out_filepath_override
 
-    cd --
+    cd -
 fi
 
 exit 0
