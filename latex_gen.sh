@@ -12,9 +12,7 @@
 
 version_maj=2
 version_min=1
-version_fix=3
-
-# TODO - add a flag for destination of output file
+version_fix=4
 
 function run_help () {
     echo "USAGE:"
@@ -22,9 +20,9 @@ function run_help () {
     echo "FLAGS:"
     echo -e "\t-d: remove auxilary compilation data after compile"
     echo -e "\t-h: display help"
-    echo -e "\t-i: input file (mandatory)"
+    echo -e "\t-i: input file [path/]name"
     echo -e "\t-m: move auxilary compilation data to separate folder after compile"
-    echo -e "\t-o: output file path/name (not implemented yet)"
+    echo -e "\t-o: output file [path/]name (optional)"
     echo -e "\t-v: print version of this program"
 }
 
